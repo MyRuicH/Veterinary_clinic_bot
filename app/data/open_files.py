@@ -13,6 +13,11 @@ if not os.path.exists(list_files.cured_animals):
      with open(list_files.cured_animals, "w", encoding="utf-8") as file:
           json.dump([], file)
 
+     
+if not os.path.exists(list_files.reviews):
+    with open(list_files.reviews, "w", encoding="utf-8") as fh:
+            json.dump([], fh)
+
 
 def get_animals(path: str = list_files.animals) -> list:
     with open(path, "r", encoding="utf-8") as fh:
@@ -26,3 +31,10 @@ def get_cured_animals(path: str = list_files.cured_animals) -> list:
           cured_animals = json.load(file)
 
      return cured_animals
+
+
+def get_reviews(path: str = list_files.reviews) -> list:
+    with open(path, "r", encoding="utf-8") as fh:
+     reviews = json.load(fh)
+
+     return reviews

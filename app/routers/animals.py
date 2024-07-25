@@ -6,6 +6,7 @@ from aiogram.fsm.context import FSMContext
 from app.data import open_files, animals
 from app.keyboards.animals import build_animals_keyboard, build_anim_action_keyboard
 from app.forms.aniamls import AniamlsForm
+from app.forms.reviews import ReviewsForm
 
 
 
@@ -76,6 +77,8 @@ async def show_cured_animals(message: Message, state: FSMContext):
         text += f"{i}. {animal}\n"
         
     await message.answer(text=text)
+
+
 
 
 
