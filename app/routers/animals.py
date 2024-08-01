@@ -71,23 +71,12 @@ async def remove_animal(call_back: CallbackQuery, state: FSMContext):
 @animals_router.message(F.text == "Список вилікуваних тварин")
 async def show_cured_animals(message: Message, state: FSMContext):
     cured_animals = open_files.get_cured_animals()
-    text = ""
-
-    for i, animal in enumerate(cured_animals, start=1):
-        text += f"{i}. {animal}\n"
-        
-    await message.answer(text=text)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    msg = ""
+    if cured_animals:
+        for i, animal in enumerate(cured_animals, start=1):
+            msg += f"{i}. {animal}\n"
+            
+        await message.answer(text=msg)
+    else:
+         msg = "Список вилікуваних тварин пустий"
+         await message.answer(text=msg)
