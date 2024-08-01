@@ -22,7 +22,7 @@ async def show_reviews(message: Message, state: FSMContext):
 
         await message.answer(text=msg)
     else:
-        msg = "Список відгуків пустий"
+        msg = "Список відгуків наразі пустий"
         await message.answer(text=msg)
 
 @review_router.message(F.text == "Додати відгук")

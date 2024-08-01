@@ -78,5 +78,5 @@ async def show_cured_animals(message: Message, state: FSMContext):
             
         await message.answer(text=msg)
     else:
-         msg = "Список вилікуваних тварин пустий"
+         msg = "Список вилікуваних тварин наразі пустий"
          await message.answer(text=msg)
